@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>매장/포장 선택화면</title>
+</head>
+<script src="Controller.js" charset="UTF-8"></script>
+<body>
+<div class = "container">매장/포장 방식을 선택해주세요.</div>
+<div class="box">
+<button type="button" id="매장"onclick =  "Check(this);"><img src="image/eatin.png" alt="btnImages" class="btnImages"></button>
+<button type="button" id="포장"onclick =  "Check(this);"><img src="image/takeout.png" alt="btnImages" class="btnImages"></button>
+</div>
+<style type="text/css">
+     @font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+width:100vw;
+height:100vh;
+background-color:#C8EFD4;
+background-image: url(image/basic.png);
+overflow:hidden;
+}
+button{
+background-color:white;
+text-align:center;
+border-radius:10px;
+outline-color:#d9c6a5;
+border:none;
+margin-right:6vw;
+}
+
+.box{ 
+position:absolute;
+left:50%;
+top:50%;
+margin-top:-15vh;
+margin-left:-30vw;
+}
+.btnImages{
+width:26vw;
+height:30vh;
+}
+
+.container{
+font-family: 'Recipekorea';
+font-size: 3vw;
+font-weight: bold;
+text-align: center;
+margin:0 auto;
+width:60%;
+padding-top:5vh;
+color:#5a3805;
+border-radius: 10px;
+}
+</style>
+<script type="text/javascript">
+String id = request.getParamenet("불고기버거");
+alert(id);
+</script>
+</body>
+</html>

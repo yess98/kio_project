@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>시작화면</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script type="text/javascript" src="Controller.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Test.js" charset="utf-8"></script>
+</head>
+<body>
+<p>kio-project</p>
+<button type="button" class="button" onclick = "location.href = 'NewMenu.html'">주문하러 가기</button>
+<style type="text/css">
+
+     @font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+width:100vw;
+height:100vh;
+background-color:#C8EFD4;
+background-image: url(image/basic.png);
+overflow:hidden;
+}
+p{
+font-family: 'Recipekorea';
+   font-size: 3vw;
+   font-weight: bold;
+    text-align: center;
+      margin: 15vh 30vw;
+}
+.button{
+    width:30vw;
+    background-color: #814505;
+    border:none;
+   
+    color:#fff;
+    padding: 5vw 0;
+    border-radius: 4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Recipekorea';
+   
+   outline : 0 ;
+    font-size: 3vw;
+    font-weight: bold;
+    margin: 25vh 35vw;
+   cursor: pointer;
+
+}
+
+</style>
+<script>
+function sendRequest(){
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open("GET","http://localhost:9000/?text=불고기버거 하나 줘",true);
+    httpRequest.send();
+    alert("실패 :"+ httpRequest.status);
+    if(httpRequest.readyState == 4){
+        alert("실패 :"+ httpRequest.status);
+     if(  httpRequest.status == 200){
+         alert(httpRequest.responseText);
+     }else{
+         alert("실패 :"+ httpRequest.status);
+     }
+    }
+}
+</script>
+
+
+
+</body>
+</html>

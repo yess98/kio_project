@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>결제방식 화면</title>
+<script src="Controller.js" charset="UTF-8"></script>
+</head>
+<body>
+<div class = "container">결제 방식을 선택해주세요.</div>
+<div class="box">
+<button type="button" id="현금" class="paybutton" onclick  = "show(this)"><img src="image/pay_1.png" alt="btnImages" class="btnImages"></button>
+<button type="button" id="카드" class="paybutton" onclick = "show(this)"><img src="image/pay_2.png" alt="btnImages" class="btnImages"></button>
+
+ <div class="modal-wrapper">
+           <div class="modal">
+          <div class="head">
+           </div>
+          <div class="content">
+             <h1>주문이 완료되었습니다.</h1>
+             <button type="button"  class="finalbutton" onclick = "location='Main.html'">확인 </button>
+          </div>
+           </div>
+         </div>
+         </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style type="text/css">
+ @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+
+     @font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+width:100vw;
+height:100vh;
+background-color:#C8EFD4;
+background-image: url(image/basic.png);
+overflow:hidden;
+}
+.finalbutton{
+   border-radius: 4vw; 
+   float : right;
+   font-size: 2vw; 
+   font-family: 'Recipekorea'; 
+   width:8vw; 
+   color:#fff;
+   background-color: #814505;  
+  
+   border : 0 ;
+}
+button{
+background-color:white;
+text-align:center;
+border-radius:10px;
+outline-color:#d9c6a5;
+border:none;
+margin-right:6vw;
+}
+.modal-wrapper { 
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  background: rgba(200, 176, 146, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-wrapper.open .modal{
+  margin-top: -200px;
+  opacity: 1;
+}
+.content 
+  padding: 5%;
+}
+.head { 
+  width: 100%;
+  height: 10vh;
+  padding: 3vw;
+  overflow: hidden;
+  background:white;
+}
+
+.modal {
+  width: 40vw;
+  height: 80vh;
+  display: block;
+  margin: 0 0 0 0;
+  position: relative;
+  top: 35%; 
+  left: 35%;
+  background: white;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  
+}
+.box{ 
+position:absolute;
+left:50%;
+top:50%;
+margin-top:-15vh;
+margin-left:-30vw;
+}
+.btnImages{
+width:26vw;
+height:30vh;
+}
+
+.container{
+font-family: 'Recipekorea';
+font-size: 3vw;
+font-weight: bold;
+text-align: center;
+margin:0 auto;
+width:60%;
+padding-top:5vh;
+color:#5a3805;
+border-radius: 10px;
+}
+h1{
+font-size : 3vw;
+ font-family: 'Recipekorea';
+ margin : 30%;
+ text-align : center;
+ display : inline-block;
+ }
+</style>
+
+<script>
+$(".paybutton").on("click", function() {
+      $('.modal-wrapper').toggleClass('open');
+      return false;
+    });
+    
+    $(".finalbutton").on("click", function() {
+      $('.modal-wrapper').toggleClass('open');
+      return false;
+    });</script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>메뉴 화면</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+      p { margin:20px 0px; }
+    </style>
+<script type="text/javascript" src="Controller.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jqeury.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="container" style=" float: left; width: 36%; padding-right:10px;">
+        <p> <h1> KIO PROJECT</h1>
+        <div style="position:relative;"> 
+        <div class ="talkscreen">
+          <div class="balloon_01"><p style="padding:1vh;">사용자의 음성이 텍스트로 변환되어 들어가야 할 부분 ! </p></div>
+          <div class="balloon_02">키오스크의 답변이 텍스트로 들어가야 할 부분 ! </div>
+         </div>
+         <div style="position:absolute;  top:38vh; left: 45vw;">
+            <input type="button" class="button" id = "gotocheck" value="결제" onclick = "Check(this)">
+             <table class="shopping-cart" id = "shopping-cart" cellpadding="20"">
+      		<caption align="left" style=" font-size: 3vh;">장바구니</caption>
+            <caption align = "left" id="total" style=" font-size: 2vh;">총 가격 0원</caption>
+      		<tr>
+      		</tr>
+    		</table>
+    		</div>
+			</div>
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#single">단품메뉴</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#set">세트메뉴</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#side">사이드메뉴</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#drink">음료메뉴</a>
+              </li>
+            </ul>
+            <div class="tab-content"  style=" float: left;">
+              <div class="tab-pane fade show active" id="single">
+              <button type="button" id="불고기버거" class="btn btnEvent" onclick="SetShoppingCart(this)" name="5000"><img src="image/beef.png" alt="btnImages" class="btnImages"></button>
+              <br>
+              <button type="button" id="새우버거" class="btn btnEvent"  onclick="SetShoppingCart(this)" name="5500"><img src="image/shrimp.png" alt="btnImages" class="btnImages"></button>
+              <br>
+              <button type="button" id="치즈버거" class="btn btnEvent" " onclick="SetShoppingCart(this)" name="4500"><img src="image/cheese.png" alt="btnImages" class="btnImages"></button>
+             </div>
+              <div class="tab-pane fade" id="set">
+              <button type="button" id="불고기버거 세트" class="btn setbtnEvent" onclick="SetShoppingCart(this)" name="8000"><img src="image/set_1.png" alt="btnImages" class="setbtnImages"></button>
+              <br>
+              <button type="button" id="치즈버거 세트" class="btn setbtnEvent" onclick="SetShoppingCart(this)" name="7500"><img src="image/set_2.png" alt="btnImages" class="setbtnImages"></button>
+               <br>
+             <button type="button" id="새우버거 세트" class="btn setbtnEvent" onclick="SetShoppingCart(this)" name="8500"><img src="image/set_3.png" alt="btnImages" class="setbtnImages"></button>
+         <div class="modal-wrapper">
+           <div class="modal">
+          <div class="head">
+           </div>
+          <div class="content">
+             <h2>사이드 선택창 </h2>
+             <button type="button" id="사이드감자튀김" class="btn setsidebtnEvent" ><img src="image/side_1.png" alt="btnImages" class="modalbtnImages"   name="2500"></button>
+             <button type="button" id="사이드치즈스틱" class="btn setsidebtnEvent"><img src="image/side_2.png" alt="btnImages" class="modalbtnImages"  name="2500"></button>
+             <br>
+             <a class="btn beforetrigger" href="#">이전  단계</a>
+            
+          </div>
+           </div>
+         </div>
+           <div class="modal-wrapper2">
+           <div class="modal">
+          <div class="head">
+           </div>
+          <div class="content">
+             <h2>음료 선택창</h2>
+             <button type="button" id="사이드콜라" class="btn setdrinkbtnEvent"><img src="image/cola.png" alt="btnImages" class="modalbtnImages"  ></button>
+             <button type="button" id="사이드사이다" class="btn setdrinkbtnEvent"><img src="image/soda.png" alt="btnImages" class="modalbtnImages" ></button>
+             <br>
+             <a class="btn beforetrigger2"  href="#">이전  단계</a>
+        
+          </div>
+           </div>
+         </div>
+            </div>
+              <div class="tab-pane fade" id="side">
+              <button type="button" id="감자튀김" class="btn btnEvent" onclick="SetShoppingCart(this)" name="2500"> <img src="image/side_1.png" alt="btnImages" class="sidebtnImages"></button>
+              <br>
+              <button type="button" id="치즈스틱" class="btn btnEvent" onclick="SetShoppingCart(this)" name="2500"> <img src="image/side_2.png" alt="btnImages" class="sidebtnImages"></button>
+               </div>
+               <div class="tab-pane fade" id="drink">
+                  <button type="button" id="콜라" class="btn btnEvent" onclick="SetShoppingCart(this)" name="1000"> <img src="image/cola.png" alt="btnImages" class="drinkbtnImages" ></button>
+                  <button type="button" id="사이다" class="btn btnEvent" onclick="SetShoppingCart(this)"name="1000"> <img src="image/soda.png" alt="btnImages" class="drinkbtnImages" ></button>
+             </div>
+            </div>  
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+   @font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.talkscreen{
+width:45vw;
+height:35vh; 
+background-color:#f6e7bc; 
+position:absolute;
+left:45vw;
+border-radius:6px;
+overflow:scroll;
+overflow-x:hidden;
+}
+
+.balloon_01 {
+position:absolute;
+top:5vh;
+right:2.5vw;
+width:40vw;
+max-height:20vh;
+background:pink;
+border-radius: 10px;
+text-align:right;
+font-family: 'Recipekorea';
+font-size:3vh;
+}
+
+.balloon_02 {
+ position:absolute;
+ top:25vh;
+ left:2vw;
+ width:40vw;
+ max-height:20vh;
+ background:#B0E0E6;
+ border-radius: 10px;
+ text-align:left;
+font-family: 'Recipekorea';
+font-size:3vh;
+
+}
+
+.tab-pane{
+text-align:center;
+}
+#gotocheck{
+	position:absolute;
+   border-radius: 4vw; 
+   font-size: 2vw; 
+   font-family: 'Recipekorea'; 
+   width:8vw; 
+   color:#fff;
+   background-color: #814505;  
+   left:39vw;
+   bottom:1vh; 
+   border : 0 ;
+ }
+       
+.tab-pane button{
+width:40vw;
+height:25vh;
+background-color:white;
+}
+.btnImages{
+width: 30%;
+height: 20vh;
+
+}
+::-webkit-scrollbar{
+width:10px;
+height:10px;
+}
+::-webkit-scrollbar-track{
+background-color:#a79c8e;
+}
+::-webkit-scrollbar-thumb{
+background-color:#eb9f9f;
+}
+
+.shopping-cart button{
+  width: 2vw;
+  height: 2vw;
+  background-color: #E1E8EE;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.setbtnImages{
+max-width:30%;
+height:20vh;
+}
+.sidebtnImages{
+max-width:30%;
+height:20vh;
+}
+.drinkbtnImages{
+max-width:30%;
+height:20vh;
+}
+.modalbtnImages{
+width: 30%;
+height:20vh;
+}
+body{
+width:100vw;
+height:100vh;
+background-color:#d9c6a5;
+overflow : hidden;
+
+}
+
+.tab-content{
+width :40vw;
+height:75vh;
+
+background-color : white;
+font-family: 'Recipekorea'; 
+
+}
+.nav{
+width:40vw;
+background-color: #d9c6a5;
+
+}
+.nav-link{
+color:#5a3805;
+}
+.nav-item{
+width: 10vw;
+background-color : #f6e7bc;
+font-family: 'Recipekorea'; 
+}
+.modal-wrapper { 
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  background: rgba(200, 176, 146, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+.modal-wrapper2 { 
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  background: rgba(200, 176, 146, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper2.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  width: 60vw;
+  height: 80vh;
+  display: block;
+  margin: 0 0 0 0;
+  position: relative;
+  top: 35%; 
+  left: 2%;
+  background: white;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  overflow:scroll;
+}
+
+.modal-wrapper.open .modal{
+  margin-top: -200px;
+  opacity: 1;
+}
+.modal-wrapper2.open .modal{
+  margin-top: -200px;
+  opacity: 1;
+}
+.head { 
+  width: 100%;
+  height: 32px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background:  #F17F42;
+}
+
+.content 
+  padding: 5%;
+}
+.content button{
+   width: 30vw;
+   height: 25vh;
+}
+.shopping-cart td{
+   font-size:2vh;
+}
+
+  </style>
+ <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+
+* {
+  box-sizing: border-box;
+}
+
+.shopping-cart {
+  width: 35vw;
+  height: 20vw;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+  overflow : scroll;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Recipekorea'
+}
+
+button:focus,
+input:focus {
+  outline:0;
+}
+</style>
+
+<script>
+
+$(".setbtnEvent").on("click", function() {
+	   $('.modal-wrapper').toggleClass('open');
+	   return false;
+	 });
+	 $(".beforetrigger").on("click", function() {
+	      $('.modal-wrapper').toggleClass('open');
+	     
+	      return false;
+	    });
+	 $(".beforetrigger2").on("click", function() {
+	      $('.modal-wrapper2').toggleClass('open');
+	     
+	      return false;
+	    });
+	 $(".setsidebtnEvent").on("click", function() {
+	      $('.modal-wrapper2 ').toggleClass('open');
+	      Q
+	      return false;
+	    });
+	 $(".setdrinkbtnEvent").on("click", function() {
+	    $('.modal-wrapper2 ').toggleClass('open');
+	      $('.modal-wrapper').toggleClass('open');
+	   
+	      return false;
+	    });
+ </script>
+
+
+
+
+</body>
+</html>
