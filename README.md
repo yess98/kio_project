@@ -55,8 +55,12 @@ Google Cloud Dialogflow - 머신 러닝 - 문서
 https://cloud.google.com/dialogflow/docs?hl=ko
 
 Apache Maven Project - Settings Reference
+
 http://maven.apache.org/settings.html
+
 Google Cloud SDK 설치 | Cloud SDK 문서
+
 https://cloud.google.com/sdk/install?hl=ko
+
 Apache Commons
 https://commons.apache.org/
